@@ -1,11 +1,11 @@
-package io.github.username.modid;
+package io.github.reoseah.power_towel;
 
 import net.fabricmc.api.ModInitializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class ModId implements ModInitializer {
-	public static final String ID = "mod_id";
+public class PowerTowel implements ModInitializer {
+	public static final String ID = "power_towel";
 	public static final Logger LOGGER = LoggerFactory.getLogger(ID);
 
 	@Override
