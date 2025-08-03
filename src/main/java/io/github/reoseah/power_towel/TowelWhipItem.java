@@ -1,14 +1,20 @@
 package io.github.reoseah.power_towel;
 
+import net.minecraft.component.DataComponentTypes;
 import net.minecraft.component.type.AttributeModifierSlot;
 import net.minecraft.component.type.AttributeModifiersComponent;
+import net.minecraft.component.type.ToolComponent;
+import net.minecraft.component.type.WeaponComponent;
 import net.minecraft.entity.attribute.EntityAttributeModifier;
 import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.item.Item;
+import net.minecraft.item.Items;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.Rarity;
+
+import java.util.List;
 
 public class TowelWhipItem extends Item {
 	public static final Identifier BASE_ENTITY_INTERACTION_RANGE_MODIFIER_ID = Identifier.of("power_towel:base_attack_speed");
@@ -16,8 +22,12 @@ public class TowelWhipItem extends Item {
 	public static final Item.Settings SETTINGS = new Item.Settings() //
 		.registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of("power_towel:towel_whip"))) //
 		.useItemPrefixedTranslationKey() //
-		.maxCount(1) //
 		.rarity(Rarity.EPIC) //
+		.repairable(Items.NETHER_STAR) //
+		.maxCount(1) //
+		.maxDamage(TowelItem.DURABILITY) //
+		.component(DataComponentTypes.WEAPON, new WeaponComponent(1)) //
+		.component(DataComponentTypes.TOOL, new ToolComponent(List.of(), 1.0F, 2, false)) //
 		.attributeModifiers(createAttributeModifiers());
 
 	public static final Item INSTANCE = new TowelWhipItem(SETTINGS);

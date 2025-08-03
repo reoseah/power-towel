@@ -51,7 +51,7 @@ public class CraftingScreenHandlerMixin {
 						towelX = x;
 						towelY = y;
 					} else {
-						// not a towel form in a grid
+						// something else in the grid
 						return;
 					}
 				}
@@ -81,7 +81,9 @@ public class CraftingScreenHandlerMixin {
 		var towelItem = towel.getItem();
 
 		// if matches target - uncraft back to the default shape
-		var result = resultItem == towelItem ? TowelItem.INSTANCE.getDefaultStack() : resultItem.getDefaultStack();
+		resultItem = resultItem == towelItem ? TowelItem.INSTANCE : resultItem;
+
+		var result = towel.copyComponentsToNewStack(resultItem, 1);
 
 		resultInventory.setStack(0, result);
 		handler.setReceivedStack(0, result);
