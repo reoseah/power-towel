@@ -4,8 +4,7 @@
 	"package": "io.github.reoseah.power_towel.mixin",
 	"compatibilityLevel": "JAVA_21",
 	"mixins": [
-		"CraftingScreenHandlerMixin",
-		"RawShapedRecipeAccessor"
+		"CraftingScreenHandlerMixin"
 	],
 	"client": [
 	],
