@@ -9,34 +9,31 @@ plugins {
 version = "$modVersion+$branchName"
 archivesBaseName = project.slug
 
-repositories {
-}
+repositories {}
 
 dependencies {
-	minecraft libs.mc
+	minecraft libs.minecraft
 	mappings variantOf(libs.yarn) { classifier "v2" }
 
-	modImplementation libs.fl
-	modImplementation libs.fapi
+	modImplementation libs.fabricloader
+	modImplementation libs.fabricapi
 }
 
 processResources {
-	final Map<String, String> meta = [
-		version       : version,
-		modId         : modId,
-		modName       : modName,
-		modDescription: modDescription,
-		homepage      : "https://modrinth.com/mod/${slug}",
-		issues        : "https://github.com/${user}/${slug}/issues",
-		sources       : "https://github.com/${user}/${slug}",
-		license       : license,
-		authors       : authors.split(", ").join("\",\n    \""),
-		contributors  : contributors.split(", ").join("\",\n    \""),
-		members       : "${authors}${contributors ? ". Contributions by ${contributors}." : ""}",
-		mc            : compatibleVersions.split(", ")[0],
-		fl            : libs.versions.fl.get(),
-		fapi          : libs.versions.fapi.get(),
-	]
+	final Map<String, String> meta = [version       : version,
+									  modId         : modId,
+									  modName       : modName,
+									  modDescription: modDescription,
+									  homepage      : "https://modrinth.com/mod/${slug}",
+									  issues        : "https://github.com/${user}/${slug}/issues",
+									  sources       : "https://github.com/${user}/${slug}",
+									  license       : license,
+									  authors       : authors.split(", ").join("\",\n    \""),
+									  contributors  : contributors.split(", ").join("\",\n    \""),
+									  members       : "${authors}${contributors ? ". Contributions by ${contributors}." : ""}",
+									  minecraft     : compatibleVersions.split(", ")[0],
+									  fabricloader : libs.versions.fabricloader.get(),
+									  fabricapi          : libs.versions.fabricapi.get(),]
 	inputs.properties meta
 	filesMatching("*.mod.json") { expand(meta) }
 	filesMatching("META-INF/*mods.toml") { expand(meta) }
@@ -55,8 +52,7 @@ java {
 
 
 publishing {
-	repositories {
-	}
+	repositories {}
 	publications {
 		mavenJava(MavenPublication) {
 			from components.java
@@ -74,6 +70,6 @@ modrinth {
 	changelog = "$System.env.CHANGELOG"
 	syncBodyFrom = "<!--DO NOT EDIT MANUALLY: synced from gh readme-->\n" + rootProject.file("README.md").text
 	dependencies {
-		required.version "fabric-api", libs.versions.fapi.get()
+		required.version "fabric-api", libs.versions.fabricapi.get()
 	}
 }
