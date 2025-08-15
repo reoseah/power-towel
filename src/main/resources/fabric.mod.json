@@ -21,9 +21,9 @@
 		"${modId}.mixins.json"
 	],
 	"depends": {
-		"minecraft": ">=${mc}",
-		"fabricloader": ">=${fl}",
-		"fabric-api": ">=${fapi}"
+		"minecraft": ">=${minecraft}",
+		"fabricloader": ">=${fabricloader}",
+		"fabric-api": ">=${fabricapi}"
 	},
 	"suggests": {
 	},

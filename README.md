@@ -1,19 +1,23 @@
 <!--suppress HtmlDeprecatedTag, XmlDeprecatedElement -->
-<center><img alt="mod preview" src="https://upload.wikimedia.org/wikipedia/commons/7/70/Example.png"/></center>
+<center><img alt="mod preview" src="images/logo-with-text.png"/></center>
 
 <center>
-A short quick summary of this mod
+A towel crafted out of Nether Stars to whip these REDACTED and wipe the REDACTED. Made for Modfest: Toybox.
 </center>
 
 ---
 
-A long description of your mod, including 
-- Dot point lists of all features
+The mod adds one, conceptually, item — Power Towel. It can be "folded" into various shapes, each a simple weapon with a
+distinct feature.
 
-`path/to/config/files` if you have them
+- Craft the towel from wool and a nether star.
 
-Screenshots of features where possible
+  <img alt="towel crafting recipe" src="images/crafting-recipe.png" />
 
----
+- Fold the towel into a shape. Each of the four corners in a crafting grid results in a different one:
 
-A footnote for special thanks, credits, and other shoutouts - including "created at modfest" banners.
+  <img alt="folding recipe for towel whip" src="images/transform-recipe.png" />
+
+- You can change freely between the shapes:
+
+  <img alt="folding recipe from towel whip to shotgun" src="images/transform-recipe-2.png"/>

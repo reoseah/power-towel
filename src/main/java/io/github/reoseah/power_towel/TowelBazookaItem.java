@@ -1,10 +1,6 @@
 package io.github.reoseah.power_towel;
 
-import net.fabricmc.fabric.api.item.v1.CustomDamageHandler;
-import net.minecraft.entity.EquipmentSlot;
-import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
@@ -25,6 +21,4 @@ public class TowelBazookaItem extends Item {
 	public TowelBazookaItem(Settings settings) {
 		super(settings);
 	}
-
-
 }
